@@ -9,12 +9,16 @@
 <% end %>  
 
 <%= form_with model:@book,url:"/books/#{@book.id}", method:'patch' do |f|%>
-    <p>Title</p>
-    <%= f.text_field :title %>
-    <p>Body</p>
-    <%= f.text_area :body %><br>
-    <%= f.submit 'Update Book' %>
+    <label>Title</label><br>
+    <%= f.text_field :title %><br>
+    <label>Body</label><br>
+    <div class="text_area">
+      <%= f.text_area :body %><br>
+    </div>
+    <div class="submit">
+      <%= f.submit 'Update Book' %>
+    </div>
 <% end %>
 
-<%= link_to 'Show',"/books/#{@book.id}" %>
+<%= link_to 'Show',"/books/#{@book.id}" %> |
 <%= link_to 'Back','/books' %>
